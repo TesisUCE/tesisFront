@@ -40,9 +40,8 @@ function App() {
 
     let formData = new FormData();
     formData.append("file", invoiceFile);
-    console.log(formData);
     const response = await fetch(
-      process.env.REACT_APP_API_URL,
+      import.meta.env.VITE_API_URL,
       {
         method: "POST",
         body: formData,
