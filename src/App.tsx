@@ -5,7 +5,6 @@ import { ProgressSpinner } from "primereact/progressspinner";
 import { Card } from "primereact/card";
 import NavBar from "./components/navbar";
 import "./App.css"; // Importa tus estilos personalizados
-
 function App() {
   const fileUploadRef = useRef<any>(null);
 
@@ -43,7 +42,7 @@ function App() {
     formData.append("file", invoiceFile);
     console.log(formData);
     const response = await fetch(
-      `https://antonyuwu-tesisapi.hf.space/analyze`,
+      process.env.REACT_APP_API_URL,
       {
         method: "POST",
         body: formData,
